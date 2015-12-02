@@ -1,0 +1,7 @@
+;a(a+b)*
+
+q0 a a r q1
+q0 b b r halt-reject
+q1 a a r q1
+q1 b b r q1
+q1 _ _ r halt-accept

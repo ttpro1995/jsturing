@@ -1,0 +1,31 @@
+q0 a x r q1a
+q0 b x r q1b
+q0 c x r q1c
+q0 y y r q5
+
+q1a a a r q1a
+q1a b b r q1a
+q1a c c r q1a
+q1a _ _ l q2a
+q1a y y l q2a
+
+q1b a a r q1b
+q1b b b r q1b
+q1b c c r q1b
+q1b _ _ l q2b
+q1b y y l q2b
+
+q1c a a r q1c
+q1c b b r q1c
+q1c c c r q1c
+q1c _ _ l q2c
+q1c y y l q2c
+
+q2a a y l q3
+q2b b y l q3
+q2c c y l q3
+
+q3 a a l q3 
+q3 b b l q3 
+q3 c c l q3 
+q3 x x r q0 

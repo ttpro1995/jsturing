@@ -1,0 +1,38 @@
+
+Syntax:
+Each line should contain one tuple of the form '<current state> <current symbol> <new symbol> <direction> <new state>'.
+You can use any number or word for <current state> and <new state>, eg. 10, a, state1. State labels are case-sensitive.
+You can use any character for <current symbol> and <new symbol>, or '_' to represent blank (space). Symbols are case-sensitive.
+<direction> should be 'l', 'r' or '*', denoting 'move left', 'move right' or 'do not move', respectively.
+Anything after a ';' is a comment and is ignored.
+The machine halts when it reaches any state starting with 'halt', eg. halt, halt-accept.
+Also:
+'*' can be used as a wildcard in <current symbol> or <current state> to match any character or state.
+'*' can be used in <new symbol> or <new state> to mean 'no change'.
+'!' can be used at the end of a line to set a breakpoint, eg '1 a b r 2 !'. The machine will automatically pause after executing this line.
+You can specify the starting position for the head using '*' in the initial input.
+
+;a^n b^n c^n
+
+q0 a x r q1
+
+q1 a a r q1
+q1 b y r q2
+q1 y y r q1
+
+q2 b b r q2
+q2 z z r q2 
+q2 c z r q3
+q3 _ _ * q5
+
+
+q3 c c l q4
+q4 z z l q4
+q4 b b l q4
+q4 y y l q4
+q4 a a l q4
+
+q4 x x r q0
+
+q5 _ _ * halt-accept
+
